@@ -103,7 +103,7 @@ class TestFileStorage(unittest.TestCase):
         """Test that count returns the count of all objects"""
         storage = DBStorage()
         test_data = {"id": 1, "name": "Test Object"}
-        storage.new(TestObject(**test_data))
+        storage.new(Place(**test_data))
         storage.save()
         count = storage.count()
         self.assertEqual(count, 1)
