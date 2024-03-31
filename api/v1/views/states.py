@@ -4,18 +4,18 @@ Flask route that returns json status response
 """
 from flask import jsonify, request, abort
 from api.v1.views import app_views
-from models import storage, State
+from models import storage, state
 
 @app_views.route('/states', methods=['GET'], strict_slashes=False)
 def get_states():
     """Retrieve the list of states object"""
-    states = storage.all(State).values()
+    states = storage.all(state).values()
     return jsonify([state.to_dict() for state in states])
 
 @app_views.route('/states/<state_id>', methods=['GET'], strict_slashes=False)
 def get_state(state_id):
     """Retrieves a State object by id"""
-    state = storage.get(State, state_id)
+    state = storage.get(state, state_id)
     if state is None:
         abort(404)
     return jsonify(state.to_dict())
