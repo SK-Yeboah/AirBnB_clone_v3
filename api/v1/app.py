@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+
 """
 Flask route that returns json status response
 """
@@ -14,7 +14,7 @@ app.register_blueprint(app_views)
 @app.teardown_appcontext
 def teardown_appcontext(exception):
     storage.close()
-    
+
 @app.errorhandler(NotFound)
 def handle_not_found(error):
     """Handler for 404 Not Found errors"""
