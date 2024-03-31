@@ -1,7 +1,12 @@
 #!/usr/bin/python3
-"""Flask route that returns json status response"""
+#!/usr/bin/python3
+"""
+Main module for the Flask API application.
 
-
+This module defines the Flask application and includes routes and error handlers
+for handling API requests and responses. It also sets up the application context
+and handles teardown tasks after each request.
+"""
 from flask import Flask , jsonify
 from models import storage
 from api.v1.views import app_views
