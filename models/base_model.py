@@ -5,8 +5,6 @@ Contains class BaseModel
 
 from datetime import datetime
 import models
-from os import getenv
-import sqlalchemy
 from sqlalchemy import Column, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 import uuid
@@ -58,8 +56,7 @@ class BaseModel:
         models.storage.new(self)
         models.storage.save()
 
-    
-    def to_dict(self, include_password=False,storage_type=None ):
+    def to_dict(self, include_password=False, storage_type=None):
         """Return dictionary representation of BaseModel"""
         base_dict = {
             'id': self.id,
@@ -69,7 +66,6 @@ class BaseModel:
         if include_password or storage_type == 'db':
             base_dict['password'] = self.password
         return base_dict
-    
 
     def delete(self):
         """delete the current instance from the storage"""
