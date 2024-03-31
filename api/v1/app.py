@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 """
-Main module for the Flask API application.
-
-This module defines the Flask application and includes routes and error handlers
+Flask application and includes routes and error handlers
 for handling API requests and responses. It also sets up the application context
 and handles teardown tasks after each request.
 """
+
 from flask import Flask , jsonify
 from models import storage
 from api.v1.views import app_views
@@ -29,5 +28,4 @@ def handle_not_found(error):
 if __name__ == "__main__":
     host = os.getenv('HBNB_API_HOST', '0.0.0.0')
     port = os.getenv('HBNB_API_PORT', 5000)
-    app.run(host='0.0.0.0', port=5000)
     app.run(host=host, port=port, threaded=True)
