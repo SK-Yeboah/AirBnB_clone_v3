@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 """
-Flask application and includes routes and error handlers
-for handling API requests and responses. It also sets up the application context
-and handles teardown tasks after each request.
+Flask route that returns JSON-formatted 404 status code response.
 """
 
 from flask import Flask , jsonify
